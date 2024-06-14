@@ -41,6 +41,7 @@ abstract class BaseController<S, T, R> where S : BaseDataService<T, R>, R : Reac
         }
     }
 
+    @PostMapping
     abstract fun create(@RequestBody data: Mono<AdminFoodRequest>): Mono<ResponseEntity<T>>
 
     open fun create(action: () -> T & Any): Mono<ResponseEntity<T>> {
