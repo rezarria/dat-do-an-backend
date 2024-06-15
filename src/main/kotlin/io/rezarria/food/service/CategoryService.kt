@@ -9,7 +9,7 @@ import reactor.core.publisher.Mono
 @Service
 class CategoryService : BaseDataService<Category, CategoryRepository>() {
 
-    fun add(name: String, description: String? = null, icon: String?= null): Mono<Category> {
+    fun add(name: String, description: String? = null, icon: String? = null): Mono<Category> {
         return repository.save(Category(name).apply {
             this.description = description
             this.icon = icon

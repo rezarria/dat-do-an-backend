@@ -8,7 +8,13 @@ import reactor.core.publisher.Mono
 
 @Service
 class FoodService : BaseDataService<Food, FoodRepository>() {
-    fun add(name: String, price: Double, description: String, primaryImage: String?, categoryId: ObjectId?): Mono<Food> {
+    fun add(
+        name: String,
+        price: Double,
+        description: String,
+        primaryImage: String?,
+        categoryId: ObjectId?
+    ): Mono<Food> {
         return repository.save(Food(name).apply {
             this.price = price
             this.description = description
