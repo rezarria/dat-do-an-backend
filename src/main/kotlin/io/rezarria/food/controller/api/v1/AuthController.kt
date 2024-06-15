@@ -1,8 +1,8 @@
 package io.rezarria.food.controller.api.v1
 
 import io.rezarria.food.controller.api.v1.dto.AuthenticationRequest
-import io.rezarria.food.controller.api.v1.dto.UserRegisterRequest
 import io.rezarria.food.controller.api.v1.dto.LoginRequest
+import io.rezarria.food.controller.api.v1.dto.UserRegisterRequest
 import io.rezarria.food.service.AuthService
 import org.springframework.http.HttpHeaders
 import org.springframework.http.ResponseEntity

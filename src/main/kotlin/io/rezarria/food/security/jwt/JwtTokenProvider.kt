@@ -87,6 +87,6 @@ class JwtTokenProvider(private val jwtProperties: JwtProperties) {
     }
 
     companion object {
-         const val AUTHORITIES_KEY = "roles"
+        const val AUTHORITIES_KEY = "roles"
     }
 }

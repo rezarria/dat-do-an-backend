@@ -9,5 +9,4 @@ data class Coupon(
     var code: String? = null,
     var validAt: Date? = null,
     var expire: Date? = null,
-) : Identity() {
-}
+) : Identity()
