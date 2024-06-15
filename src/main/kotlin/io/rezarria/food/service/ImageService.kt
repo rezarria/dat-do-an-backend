@@ -2,13 +2,11 @@ package io.rezarria.food.service
 
 import com.sksamuel.scrimage.ImmutableImage
 import com.sksamuel.scrimage.webp.WebpWriter
-import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.core.io.buffer.DataBuffer
 import org.springframework.stereotype.Service
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
-import java.io.File
 import java.io.SequenceInputStream
 import java.nio.file.Path
 import java.util.*
@@ -38,7 +36,7 @@ class ImageService(private val fileService: FileService) {
             val input = SequenceInputStream(Collections.enumeration(it))
             val image = ImmutableImage.loader().fromStream(input)
             Mono.fromCallable {
-                image.output(WebpWriter.DEFAULT,path)
+                image.output(WebpWriter.DEFAULT, path)
                 input.close()
             }.then()
         }
