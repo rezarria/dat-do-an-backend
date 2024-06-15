@@ -12,7 +12,8 @@ class WebConfig {
     @Bean
     fun corsWebFilter(): CorsWebFilter {
         val corsConfiguration = CorsConfiguration()
-        corsConfiguration.allowedOrigins = listOf("localhost", "mytrustedwebsite.com", "http://localhost:8081", "http://localhost:3000")
+        corsConfiguration.allowedOrigins =
+            listOf("localhost", "mytrustedwebsite.com", "http://localhost:8081", "http://localhost:3000")
         corsConfiguration.allowedMethods = listOf("GET", "POST", "PUT", "DELETE", "UPDATE", "PATCH", "OPTIONS")
         corsConfiguration.allowedHeaders = listOf("content-type", "authorization")
         corsConfiguration.allowCredentials = true
