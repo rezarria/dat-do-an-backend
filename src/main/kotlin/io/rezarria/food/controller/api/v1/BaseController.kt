@@ -1,7 +1,6 @@
 package io.rezarria.food.controller.api.v1
 
 import com.github.fge.jsonpatch.JsonPatch
-import io.rezarria.food.controller.api.v1.dto.AdminFoodRequest
 import io.rezarria.food.controller.models.PageParam
 import io.rezarria.food.repositories.BaseRepository
 import io.rezarria.food.service.BaseDataService
@@ -40,9 +39,6 @@ abstract class BaseController<S, T, R> where S : BaseDataService<T, R>, R : Reac
             ResponseEntity.ok().body(it)
         }
     }
-
-    @PostMapping
-    abstract fun create(@RequestBody data: Mono<AdminFoodRequest>): Mono<ResponseEntity<T>>
 
     open fun create(action: () -> T & Any): Mono<ResponseEntity<T>> {
         return service.create(action.invoke()).map {
